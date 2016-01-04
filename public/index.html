@@ -8,7 +8,6 @@
 </head>
 <body>
 	<script src="test.js"></script>
-  <script src="app.js"></script>
 	<h1>What Should I Wear?</h1>
      
        <!-- <div ng-init="destinations = []">
@@ -20,12 +19,15 @@
        <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }}</li>
     </ul> -->
     <div ng-controller="weatherController">
-       Where Are You Headed? <input ng-model="dest">
-       <button ng-click="addDest(dest)">Tell Me What to Wear</button>
+       <!-- Where Are You Headed? <input ng-model="zip"> -->
+       <p> {{ zip }}</p>
+       <!-- <button ng-click="addDest(dest)">Tell Me What to Wear</button> -->
      </div>
      <h3>Destination Weather Information</h3>
-     <ul>
+     <!-- <ul>
        <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }}</li>
-    </ul>
+    </ul> -->
+     
+    <script src="app.js"></script>
 </body>
 </html>
