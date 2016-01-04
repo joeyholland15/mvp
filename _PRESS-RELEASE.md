@@ -19,26 +19,49 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  What Should I Wear?
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  Where travelers and commuters can go to check the weather at their destination. 
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  This product uses a public weather api to report the weather at a particular location. Those who commute to work
+  or are planning a trip can compare the temperature/precipitation where they are to that of where they are headed.
+
+  Users can also input clothes that they own, and the app will tell them what to wear based on their inventory and
+  the compared temperature of the destination. 
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  Getting to work or flying to a destination and realizing it's far warmer or colder (or raining) than where they 
+  came from and not being prepared with the proper clothing. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  This product solves the problem by allowing users to check ahead of time what they'll need to bring. 
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  "Our service helps users from catching a cold after stepping off the plain in a different city or sweating through their jackets when they arrive at work."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  It's easy to get started! Just enter any clothing you may have and enter the zipcode of where you're coming from and where you're headed. 
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "My four-year-old daughter didn't want to put her jacket on before we got on the plane to go home. Thanks to this service I was able to check the weather at home and see that it was snowing! I told her she couldn't make a snowman unless she put her jacket on. "
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  Head to our splash page to get started!
