@@ -3,8 +3,20 @@
 <html ng-app>
 <head>
 	<title>What Should I Wear?</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
 <body>
+	<script src="test.js"></script>
 	<h1>What Should I Wear?</h1>
+	<div>
+     <h3>Destination Weather Information</h3>
+     <div class="todos-container" ng-init="destinations = []">
+       <input ng-model="dest">
+       <button ng-click="destinations.push(dest); dest=''">add</button>
+     </div>
+     <ul>
+       <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }}</li>
+    </ul>
 </body>
 </html>
