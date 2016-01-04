@@ -12,5 +12,12 @@ angular.module('WhatToWear', [])
   })
 
   .controller('weatherController', function($scope, Weather) {
-    $scope.
+    $scope.destinations = []; 
+
+    $scope.zip = '';
+
+    $scope.addDest = function(destination) {
+      $scope.destinations.push(destination); 
+      $scope.zip = ''; 
+    }
   })
