@@ -17,7 +17,7 @@
      </div>
      <h3>Destination Weather Information</h3>
      <ul>
-       <li ng-repeat="dest in destinations"> {{ dest }}</li>
+       <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }}</li>
     </ul>
 </body>
 </html>
