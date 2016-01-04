@@ -10,11 +10,12 @@
 	<script src="test.js"></script>
 	<h1>What Should I Wear?</h1>
 	<div>
-     <h3>Destination Weather Information</h3>
+     
      <div class="todos-container" ng-init="destinations = []">
-       <input ng-model="dest">
-       <button ng-click="destinations.push(dest); dest=''">add</button>
+       Where Are You Headed? <input ng-model="dest">
+       <button ng-click="destinations.push(dest); dest=''">Tell Me What to Wear</button>
      </div>
+     <h3>Destination Weather Information</h3>
      <ul>
        <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }}</li>
     </ul>
