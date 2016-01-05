@@ -26,7 +26,7 @@ angular.module('WhatToWear', [])
         $scope.data.precip = data.data.weather[0].description;
         $scope.zip = ''; 
         $scope.data.clothing = '';
-        if($scope.data.chanceOfPrecip > .5) {
+        if($scope.data.chanceOfPrecip > .4) {
           $scope.data.clothing = 'Looks like you need a light jacket'
         } 
       }); 
