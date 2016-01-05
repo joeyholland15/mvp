@@ -5,7 +5,7 @@ angular.module('WhatToWear', [])
   	    method: 'GET',
   	  	url:'http://api.openweathermap.org/data/2.5/weather?zip=' + zipcode + ',us&units=imperial&APPID=5c680e5d8c8f29befb9f1c239dfae90b'
   	  }).success(function (data) {
-        console.log(data.name); 
+        return data;  
       })
   	};
   	return {
@@ -14,14 +14,17 @@ angular.module('WhatToWear', [])
   })
 
   .controller('weatherController', function($scope, Weather) {
-    $scope.destinations = []; 
+    $scope.data = {};
 
     $scope.zip = '94611';
 
     $scope.name = Weather.name; 
 
     $scope.getInfo = function() {
-      Weather.getWeather($scope.zip); 
+      Weather.getWeather($scope.zip).then(function(data) {
+        $scope.data.city = data.data.name; 
+        console.log($scope.data.city); 
+      }); 
     };
   })
 
