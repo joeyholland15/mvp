@@ -23,6 +23,9 @@ angular.module('WhatToWear', [])
         $scope.data.city = data.data.name; 
         $scope.data.precip = data.data.weather[0].description;
         $scope.zip = ''; 
+        if($scope.data.precip === 'light rain') {
+          $scope.data.clothing = 'Looks like you need a light jacket'
+        }
       }); 
     };
   })
