@@ -20,7 +20,6 @@ angular.module('WhatToWear', [])
 
     $scope.getInfo = function() {
       Weather.getWeather($scope.zip).then(function(data) {
-        console.log(data);
         $scope.data.city = data.data.name; 
         $scope.data.precip = data.data.weather[0].description;
         $scope.zip = ''; 
