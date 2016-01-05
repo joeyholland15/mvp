@@ -1,9 +1,0 @@
-<div>
-  <h3>Destination Weather Information</h3>
-  <div class="todos-container" ng-init="destinations = []">
-    <input ng-model="dest">
-    <button ng-click="destinations.push(dest); dest=''">add</button>
-    </div>
-    <ul>
-      <li ng-repeat="dest in destinations track by $index" ng-click="destinations.splice($index, 1)"> {{ dest }} </li>
-    </ul>
