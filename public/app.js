@@ -15,13 +15,15 @@ angular.module('WhatToWear', [])
 
   .factory('Inventory', function($http) {
     //POST REQUEST EXAMPLE
-  // var addOne = function (link) {
-  //   return $http({
-  //     method: 'POST',
-  //     url: '/api/links',
-  //     data: link
-  //   });
-  // };
+    var addOne = function (link) {
+      return $http({
+        method: 'POST',
+        //need to edit
+        url: '/api/links',
+        //need to edit
+        data: link
+      });
+    };
   })
 
   .controller('weatherController', function($scope, Weather) {
@@ -43,6 +45,12 @@ angular.module('WhatToWear', [])
         } 
       }); 
     };
+  })
+
+  .controller('inventoryController', function($scope, Inventory ) {
+    $scope.light = '';
+    $scope.moderate = '';
+    $scope.heavy = ''
   })
 
 

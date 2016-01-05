@@ -6,22 +6,31 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
-<body>
+<body class="body">
 	<script src="app.js"></script>
 	<h1>What Should I Wear?</h1>
     <div class="weather" ng-controller="weatherController">
       <form name="zipcode" ng-submit='getInfo()'>
          Where are you headed?  <input type='text' ng-model='zip'>
        <!-- <button ng-click="getInfo()">Tell Me What to Wear</button> -->
-       </form>
-       <h3>Destination Weather Information</h3>
-         <p> City: {{ data.city }} </p>
-         <p> Current Status: {{ data.precip }} </p>
-         <p> Chance of Rain: {{ data.chanceOfPrecip * 100 }}%</p>
-       <h4> {{ data.clothing }} </h4>
+      </form>
+      <h3>Destination Weather Information</h3>
+        <p> City: {{ data.city }} </p>
+        <p> Current Status: {{ data.precip }} </p>
+        <p> Chance of Rain: {{ data.chanceOfPrecip * 100 }}%</p>
+      <h2> {{ data.clothing }} </h2>
     </div>
-    <div ng-view></div>
-    <p>Want to customize your experience? Try updating your <a href='/inventory'>inventory</a>
-    
+    <h4>Want to customize your experience? Try updating your Inventory</h4>
+    <div class="inven" ng-controller="inventoryController"></div>
+      <form name="light" ng-submit='getInfo()'>
+         Warm Day Attire  <input type='text' ng-model='light'>
+      </form>
+       <form name="moderate" ng-submit='getInfo()'>
+         Moderate Attire <input type='text' ng-model='moderate'>
+       </form>
+       <form name="heavy" ng-submit='getInfo()'>
+         Heavy Duty Attire <input type='text' ng-model='heavy'>
+       </form>
+    </div>
 </body>
 </html>
