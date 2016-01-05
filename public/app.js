@@ -16,14 +16,14 @@ angular.module('WhatToWear', [])
   .controller('weatherController', function($scope, Weather) {
     $scope.data = {};
 
-    $scope.zip = '94611';
-
-    $scope.name = Weather.name; 
+    $scope.zip = '';
 
     $scope.getInfo = function() {
       Weather.getWeather($scope.zip).then(function(data) {
+        console.log(data);
         $scope.data.city = data.data.name; 
-        console.log($scope.data.city); 
+        $scope.data.precip = data.data.weather[0].description;
+        $scope.zip = ''; 
       }); 
     };
   })

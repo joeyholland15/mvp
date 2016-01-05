@@ -10,10 +10,14 @@
 	<script src="test.js"></script>
 	<h1>What Should I Wear?</h1>
     <div ng-controller="weatherController">
-       <p> {{ zip }}</p>
-       <button ng-click="getInfo()">Tell Me What to Wear</button>
-     </div>
+       <form name="zipcode" ng-submit='getInfo()'>
+         Where are you headed?  <input type='text' ng-model='zip'>
+       <!-- <button ng-click="getInfo()">Tell Me What to Wear</button> -->
+     </form>
      <h3>Destination Weather Information</h3>
+     <p> {{ data.city }} </p>
+     <p> {{ data.precip }} </p>
+     </div>
     <script src="app.js"></script>
 </body>
 </html>
