@@ -14,10 +14,12 @@
          Where are you headed?  <input type='text' ng-model='zip'>
        <!-- <button ng-click="getInfo()">Tell Me What to Wear</button> -->
        </form>
-       <h3>Destination Weather Information</h3>
+       <!-- <h3>Destination Weather Information</h3>
          <p> City: {{ data.city }} </p>
          <p> Current Status: {{ data.precip }} </p>
-       <h4> {{ data.clothing }} </h4>
+       <h4> {{ data.clothing }} </h4> -->
     </div>
+    <div ng-view></div>
+    <p>Want to customize your experience? Try updating your <a href='/inventory'>inventory</a>
 </body>
 </html>

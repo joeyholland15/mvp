@@ -38,6 +38,10 @@ var app = express();
 
 app.use(express.static('public'));
 
+app.get('/inventory', function(req, res) {
+  res.redirect('inv.html'); 
+})
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
