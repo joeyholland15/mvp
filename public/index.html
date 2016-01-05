@@ -17,6 +17,7 @@
        <h3>Destination Weather Information</h3>
          <p> City: {{ data.city }} </p>
          <p> Current Status: {{ data.precip }} </p>
+         <p> Chance of Rain: {{ data.chanceOfPrecip * 100 }}%</p>
        <h4> {{ data.clothing }} </h4>
     </div>
     <div ng-view></div>

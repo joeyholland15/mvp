@@ -39,7 +39,7 @@ var app = express();
 app.use(express.static('public'));
 
 app.get('/inventory', function(req, res) {
-  res.redirect('inv.html'); 
+  res.send('inventory'); 
 })
 
 var server = app.listen(3000, function () {

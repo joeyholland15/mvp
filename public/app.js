@@ -14,19 +14,21 @@ angular.module('WhatToWear', [])
   })
 
   .controller('weatherController', function($scope, Weather) {
-    $scope.data = {};
+    $scope.data = {chanceOfPrecip: 0};
 
     $scope.zip = '';
 
     $scope.getInfo = function() {
       Weather.getWeather($scope.zip).then(function(data) {
         $scope.data.city = data.data.name; 
+        $scope.data.chanceOfPrecip = data.data.rain['1h'];
+        console.log($scope.data.chanceOfPrecip); 
         $scope.data.precip = data.data.weather[0].description;
         $scope.zip = ''; 
         $scope.data.clothing = '';
-        if($scope.data.precip === 'light rain') {
+        if($scope.data.chanceOfPrecip > .5) {
           $scope.data.clothing = 'Looks like you need a light jacket'
-        }
+        } 
       }); 
     };
   })
