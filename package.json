@@ -19,6 +19,8 @@
   "homepage": "https://github.com/joeyholland15/2015-11-mvp#readme",
   "dependencies": {
     "express": "^4.13.3",
+    "kerberos": "0.0.17",
+    "mongoose": "^4.3.4",
     "nodemon": "^1.8.1"
   }
 }

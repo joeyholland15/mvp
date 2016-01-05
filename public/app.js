@@ -5,12 +5,23 @@ angular.module('WhatToWear', [])
   	    method: 'GET',
   	  	url:'http://api.openweathermap.org/data/2.5/weather?zip=' + zipcode + ',us&units=imperial&APPID=5c680e5d8c8f29befb9f1c239dfae90b'
   	  }).success(function (data) {
-        return data;  
+        return data; 
       })
   	};
   	return {
   	  getWeather: getWeather
   	}; 
+  })
+
+  .factory('Inventory', function($http) {
+    //POST REQUEST EXAMPLE
+  // var addOne = function (link) {
+  //   return $http({
+  //     method: 'POST',
+  //     url: '/api/links',
+  //     data: link
+  //   });
+  // };
   })
 
   .controller('weatherController', function($scope, Weather) {
@@ -20,6 +31,7 @@ angular.module('WhatToWear', [])
 
     $scope.getInfo = function() {
       Weather.getWeather($scope.zip).then(function(data) {
+        console.log(data); 
         $scope.data.city = data.data.name; 
         $scope.data.chanceOfPrecip = data.data.rain['1h'];
         console.log($scope.data.chanceOfPrecip); 
