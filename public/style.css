@@ -2,8 +2,18 @@ h1 {
   color: green;
 }
 
+h2 {
+  color: red;
+}
+
 .body {
-  text-align: center
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  background-color: Wheat;
+}
+
+#weather {
+  font-color: red;
 }
 
 

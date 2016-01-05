@@ -17,8 +17,7 @@
       <h3>Destination Weather Information</h3>
         <p> City: {{ data.city }} </p>
         <p> Current Status: {{ data.precip }} </p>
-        <p> Chance of Rain: {{ data.chanceOfPrecip * 100 }}%</p>
-      <h2> {{ data.clothing }} </h2>
+      <h2 id="weather"> {{ data.clothing }} </h2>
     </div>
     <h4>Want to customize your experience? Try updating your Inventory</h4>
     <div class="inven" ng-controller="inventoryController"></div>

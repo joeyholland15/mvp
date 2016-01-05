@@ -1,6 +1,11 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var db = require('./config.js')
+var Inventory = require('./inventory.js'); 
+
+Inventory.create({ heavy: 'green jacket', moderate: 'striped jacked', light: 'green shorts' }, function (err, results) {
+  if (err) return handleError(err);
+})
 
 var app = express();
 

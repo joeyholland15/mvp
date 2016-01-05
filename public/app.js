@@ -40,9 +40,13 @@ angular.module('WhatToWear', [])
         $scope.data.precip = data.data.weather[0].description;
         $scope.zip = ''; 
         $scope.data.clothing = '';
-        if($scope.data.chanceOfPrecip > .4) {
-          $scope.data.clothing = 'Looks like you need a light jacket'
-        } 
+        if($scope.data.precip === 'light rain' || $scope.data.precip === 'moderate rain') {
+          $scope.data.clothing = 'Looks like you need a rain jacket'
+        } else if ($scope.data.precip === 'clear skies') {
+          $scope.data.clothing = 'Looks like no rain - you can leave your jacket at home!'
+        } else if ($scope.data.precip === 'heavy intensity rain') {
+          $scope.data.clothing = 'Bring out the big guns and throw on your heavy rain jacket!'
+        }
       }); 
     };
   })
