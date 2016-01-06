@@ -32,9 +32,9 @@ angular.module('WhatToWear', [])
       Weather.getWeather($scope.zip).then(function(data) {
         console.log(data); 
         $scope.data.city = data.data.name; 
-        $scope.data.chanceOfPrecip = data.data.rain['1h'];
         console.log($scope.data.chanceOfPrecip); 
         $scope.data.precip = data.data.weather[0].description;
+        $scope.data.temp = data.data.main.temp;
         $scope.zip = ''; 
         $scope.data.clothing = '';
         if($scope.data.precip === 'light rain' || $scope.data.precip === 'moderate rain') {
@@ -50,6 +50,7 @@ angular.module('WhatToWear', [])
     $scope.getJacket = function() {
       Weather.getJacket().then(function(data) {
         $scope.jacket = data.data.light;
+        $scope.zip = '';
       })
     }
   })
