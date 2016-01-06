@@ -19,17 +19,17 @@
         <p> Current Status: {{ data.precip }} </p>
       <h2 id="weather"> {{ data.clothing }} </h2>
     </div>
-    <h4>Want to customize your experience? Try updating your Inventory</h4>
-    <div class="inven" ng-controller="inventoryController"></div>
-      <form name="light" ng-submit='getInfo()'>
-         Warm Day Attire  <input type='text' ng-model='light'>
+    <h4>Want to customize your experience? Try updating your inventory</h4>
+    <div ng-controller="inventoryController">
+      <form ng-submit='addInventory()'>
+         Describe one of your jackets:  <input type='text' ng-model='jacket'>
       </form>
-       <form name="moderate" ng-submit='getInfo()'>
-         Moderate Attire <input type='text' ng-model='moderate'>
+       <!-- <form name="moderate" ng-submit='addInventory()'>
+         Moderate Attire <input type='text' ng-model='data.moderate'>
        </form>
-       <form name="heavy" ng-submit='getInfo()'>
-         Heavy Duty Attire <input type='text' ng-model='heavy'>
-       </form>
+       <form name="heavy" ng-submit='addInventory()'>
+         Heavy Duty Attire <input type='text' ng-model='data.heavy'>
+       </form> -->
     </div>
 </body>
 </html>

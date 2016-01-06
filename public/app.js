@@ -13,21 +13,8 @@ angular.module('WhatToWear', [])
   	}; 
   })
 
-  .factory('Inventory', function($http) {
-    //POST REQUEST EXAMPLE
-    var addOne = function (link) {
-      return $http({
-        method: 'POST',
-        //need to edit
-        url: '/api/links',
-        //need to edit
-        data: link
-      });
-    };
-  })
-
   .controller('weatherController', function($scope, Weather) {
-    $scope.data = {chanceOfPrecip: 0};
+    $scope.data = {};
 
     $scope.zip = '';
 
@@ -51,11 +38,36 @@ angular.module('WhatToWear', [])
     };
   })
 
-  .controller('inventoryController', function($scope, Inventory ) {
-    $scope.light = '';
-    $scope.moderate = '';
-    $scope.heavy = ''
+  .factory('Inventory', function($http) {
+    var addOne = function (jacket) {
+      return $http({
+        method: 'POST',
+        url: '/api/inventory',
+        data: {jacket: jacket}
+      }).success(function(data) {
+        console.log('SUCCESS');
+      });
+    };
+    return {
+      addOne: addOne
+    }
   })
+
+  .controller('inventoryController', function($scope, Inventory) {
+    $scope.jacket = '';
+    $scope.addInventory = function() {
+      console.log($scope.jacket);
+      Inventory.addOne($scope.jacket)
+        .then(function() {
+          console.log('made request'); 
+          $scope.jacket = '';
+        })
+    }
+  })
+
+  
+
+ 
 
 
 
