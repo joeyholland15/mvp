@@ -37,12 +37,14 @@ angular.module('WhatToWear', [])
         $scope.data.temp = data.data.main.temp;
         $scope.zip = ''; 
         $scope.data.clothing = '';
-        if($scope.data.precip === 'light rain' || $scope.data.precip === 'moderate rain') {
-          $scope.data.clothing = 'Looks like you need a rain jacket'
+        if($scope.data.temp < 60 || $scope.data.precip === 'moderate rain') {
+          $scope.data.clothing = 'Looks like you need your ' + $scope.jacket;
         } else if ($scope.data.precip === 'clear skies') {
           $scope.data.clothing = 'Looks like no rain - you can leave your jacket at home!'
         } else if ($scope.data.precip === 'heavy intensity rain') {
           $scope.data.clothing = 'Bring out the big guns and throw on your heavy rain jacket!'
+        } else if ($scope.data.precip === 'broken clouds') {
+          $scope.data.clothing = 'Looks like you need your ' + $scope.jacket;
         }
       }); 
     };
