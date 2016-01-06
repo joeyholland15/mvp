@@ -8,7 +8,17 @@ angular.module('WhatToWear', [])
         return data; 
       })
   	};
+
+    var getJacket = function() {
+      return $http({ 
+        method: 'GET',
+        url: '/api/inventory'
+      }).success(function (data) {
+        return data; 
+      })
+    }
   	return {
+      getJacket: getJacket,
   	  getWeather: getWeather
   	}; 
   })
@@ -36,6 +46,12 @@ angular.module('WhatToWear', [])
         }
       }); 
     };
+
+    $scope.getJacket = function() {
+      Weather.getJacket().then(function(data) {
+        $scope.jacket = data.data.light;
+      })
+    }
   })
 
   .factory('Inventory', function($http) {

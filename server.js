@@ -14,11 +14,19 @@ app.post('/api/inventory', function(req, res, next) {
   var myInventory = new Inventory({
     light: req.body.jacket
   })
-  myInventory.save(function (err, inventory) {
+  myInventory.save(function (err, jacket) {
     if (err) { return next(err) }
-    res.json(201, inventory)
+    res.json(201, jacket)
   })
 });
+
+app.get('/api/inventory', function(req, res, next) {
+  Inventory.findOne({light: 'A\'s Letterman'}, function (err, jacket) {
+  	if (err) return handleError(err);
+  	res.json(200, jacket);
+  	console.log('got here'); 
+  })
+})
 
 app.listen(3000); 
 
